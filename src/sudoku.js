@@ -1,44 +1,51 @@
 export function Sudoku(board) {
     this.board = board; //2D array
-    this.status = false; //board is non-legal as a default
-}
-
-Sudoku.prototype.IsLegal = function () {
-    if (this.board.length != 9) { //check grid's # of rows
-        this.status = false;
+    // this.status = true; //board is non-legal as a default
+  }
+  
+  Sudoku.prototype.IsLegal = function() {
+    var Arr = this.board;
+    
+    if (Arr.length != 9) {
+      //check grid's # of rows
+      return "game does not have 9 rows";
+    } else {
+      var rowIntCount = [];
+      for (var i = 0; i < Arr.length; i++) {
+        //looping through rows
+        if (Arr[i].length != 9) {
+          //check grid's # of cols
+          return "game does not have 9 cols";
+        }
+  
+        var colIntCount = [];
+        for (var j = 0; j < Arr.length; j++) {
+          //looping through cols
+          if (!rowIntCount.includes(Arr[i][j])) {
+            rowIntCount.push(Arr[i][j]);
+          }
+          if (!Number.isInteger(Arr[i][j]) || Arr[i][j] === 0) {
+            //check to see if all cells contains integers.
+            return "game includes non integer between 1-9";
+          } else {
+            if (!colIntCount.includes(Arr[j][i])) {
+              colIntCount.push(Arr[j][i]);
+            }
+          }
+          
+          }
+          if (colIntCount.length < 9) {
+              console.log(colIntCount.length);
+            //check for duplicates in each col.
+            return "game include duplicates in row or col";
+        }
+        
+      }
+      if (rowIntCount.length < 9) {
+          console.log(rowIntCount.length);
+          //check for duplicates in each row.
+          return "game include duplicates in row or col";
+        }
     }
-    else {
-
-        for (var i = 0; i < this.board.length; i++) {
-            var rowSum = 0;
-            for (var j = 0; j < this.board.length; j++) {
-                rowSum += this.board[i][j];
-                if (!this.board[i][j].isInteger()) //check to see if all cells contains integers.
-                {
-                    this.status = false;
-                }
-            }
-            if (rowSum != 45) //check for duplicates in each row.
-            {
-                this.status = false;
-            }
-        }
-
-        var colSum = 0;
-        for (var l = 0; l < this.board.length; l++) {
-
-            if (this.board[l].length != 9) { //check grid's # of cols
-                this.status = false;
-            }
-            else {
-                colSum += this.board[l];
-            }
-        }
-        if (colSum != 45) { //check for duplicates in each col.
-            this.status = false;
-        }
-        this.status = true;
-    }
-    return this.status;
-}
-
+    return "game is legit!";
+  };

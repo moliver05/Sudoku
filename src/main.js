@@ -22,13 +22,10 @@ $(document).ready(function() {
             else {
                 allBoxesArr.push(eachBox.val());
             }
+
+            $('#result').show();
+        })
         });
 
-        // var number = $('#number').val();
-        // var goal = $('#result').val();
-        // var output = Sudoku(board)
-        // output.forEach(function(element) {
 
-          $('#result').show()
-        })
     });
