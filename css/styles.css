@@ -1,10 +1,20 @@
-input 
-{
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+   
+  }
   
-    background-color: pink;
-}
+  .flex-container > div {
+    background-color: #f1f1f1;
+    size: 50px;
+    margin: 5px;
+    text-align: center;
+    width: 130px;
+    line-height: 50px;
+    font-size: 30px;
+    
+  }
 
-.col-xs 
-{
-    width: 20%;
-}
+  input {
+      width: inherit;
+  }

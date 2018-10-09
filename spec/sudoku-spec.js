@@ -1,7 +1,7 @@
 
-import { Sudoku } from '../src/sudoku.js';
+// import { Sudoku } from '../src/sudoku.js';
 
-describe ('Sudoku', function () {
-var checkSudoku;
-beforeEach(function())
-})
+// describe ('Sudoku', function () {
+// var checkSudoku;
+// beforeEach(function())
+// })
