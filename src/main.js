@@ -7,8 +7,6 @@ import '../css/styles.css';
 $(document).ready(function() {
       $('#sudoku-form').submit(function(event) {
         event.preventDefault();
-        
-        $('.input').clickfunction() 
 
         var allBoxes = $(".eachBox");
         var allRowsArr = [];
@@ -23,7 +21,6 @@ $(document).ready(function() {
                 allBoxesArr.push(eachBox.val());
             }
 
-            $('#result').show();
         })
         });
 
