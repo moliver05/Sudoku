@@ -1,7 +1,7 @@
 .flex-container {
     display: flex;
     flex-wrap: nowrap;
-   
+
   }
   
   .flex-container > div {
@@ -17,4 +17,9 @@
 
   input {
       width: inherit;
+      background-color: bisque;
+  }
+
+  body {
+    background-color: teal;
   }

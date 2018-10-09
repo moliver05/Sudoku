@@ -9,12 +9,26 @@ $(document).ready(function() {
         event.preventDefault();
         
         $('.input').clickfunction() 
-        var number = $('#number').val(); 
-        var goal = $('#result').val();
-        var output = Sudoku(board)
-        output.forEach(function(element) {
 
+        var allBoxes = $(".eachBox");
+        var allRowsArr = [];
+        var allBoxesArr = [];
+        allBoxes.forEach(function(eachBox, i) {
+            if (i % 9 == 0 && i != 0) {
+                allRowsArr.push(allBoxesArr);
+                allBoxesArr = [];
+                allBoxesArr.push(eachBox.val());
+            }
+            else {
+                allBoxesArr.push(eachBox.val());
+            }
         });
+
+        // var number = $('#number').val();
+        // var goal = $('#result').val();
+        // var output = Sudoku(board)
+        // output.forEach(function(element) {
+
           $('#result').show()
         })
     });
