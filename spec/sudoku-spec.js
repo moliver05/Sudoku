@@ -62,6 +62,7 @@ describe("Sudoku", function() {
       "game includes non integer between 1-9"
     ); //there is a 0
   });
+  
     it("should correctly check if there is any duplicates", function() {
         reusableSudoku = new Sudoku([
             [2, 2, 3, 4, 5, 6, 7, 8, 8],
